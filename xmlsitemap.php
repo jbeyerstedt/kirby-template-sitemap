@@ -15,8 +15,8 @@
 // changelog: 
 // -------------------------------------------
 
-$ignore = array('sitemap', 'error', 'design', 'qr');
-$ignoreTemplate = array('carousel', 'about-me', 'contact', 'feature', 'more-info', 'onepagerSection', 'projects');
+$ignore = array('sitemap', 'error');
+$ignoreTemplate = array('carousel');
 
 // send the right header
 header('Content-type: text/xml; charset="utf-8"');
