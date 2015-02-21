@@ -8,7 +8,7 @@
 // exclude pages from sitemap by intended Template (content file name)
 // so You can exclude the templates, that are only for blueprints or for selecting snippets.
  
-// copyright: Jannik Beyerstedt | http://jannikbeyerstedt.de | jtByt.Pictures@gmail.com
+// copyright: Jannik Beyerstedt | http://jannikbeyerstedt.de | code@jannikbeyerstedt.de
 // license: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
 
 // version: 1.0 (14.02.2015)
