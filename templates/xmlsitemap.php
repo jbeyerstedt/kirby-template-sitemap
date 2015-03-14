@@ -11,12 +11,16 @@
 // copyright: Jannik Beyerstedt | http://jannikbeyerstedt.de | code@jannikbeyerstedt.de
 // license: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
 
-// version: 1.0 (14.02.2015)
+// usage:
+// see the readme.md contained in the repository
+
+// version: 1.1.0 (14.03.2015)
 // changelog: 
+// v1.1.0: set ignore arrays in config
 // -------------------------------------------
 
-$ignore = array('sitemap', 'error');
-$ignoreTemplate = array('carousel');
+$ignore         = c::get('smap_ignoreSite');
+$ignoreTemplate = c::get('smap_ignoreTemplate');
 
 // send the right header
 header('Content-type: text/xml; charset="utf-8"');
