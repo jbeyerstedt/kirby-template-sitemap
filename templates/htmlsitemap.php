@@ -34,9 +34,9 @@ function pageExcluded($p) {
   }
 }
 
-snippet('html-head');
-snippet('cont-header');
-snippet('plg-navbar');
+snippet('base/html-head');
+snippet('base/cont-header');
+snippet('plg/plg-navbar');
 ?>
 
 <main class="main" role="main"><div class="container">
@@ -87,5 +87,5 @@ foreach($pages->invisible() as $p) {
   </div><!--end row-->
 </div></main>
 
-<?php snippet('cont-footer') ?>
-<?php snippet('html-end') ?>
+<?php snippet('base/cont-footer') ?>
+<?php snippet('base/html-end') ?>
