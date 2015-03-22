@@ -16,9 +16,10 @@
 // usage:
 // see the readme.md contained in the repository
 
-// version: 1.1.0 (14.03.2015)
+// version: 1.1.0 (21.03.2015)
 // changelog: 
 // v1.1.0: more beautiful html markup && set ignore arrays in config
+// v1.1.1: move content column class to config.php
 // -------------------------------------------
 
 function pageExcluded($p) {
@@ -41,7 +42,7 @@ snippet('plg/plg-navbar');
 
 <main class="main" role="main"><div class="container">
   <div class="row">
-    <div class="section col-sm-9" id="content">
+    <div <?php echo c::get('smap_column_class_id') ?>>
       <div class="sheet">
     <h2><?php echo $page->title() ?></h2>
     
