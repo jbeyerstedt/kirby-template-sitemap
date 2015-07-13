@@ -1,8 +1,3 @@
-# kirby2 sitemap templates
-by Jannik Beyerstedt from Hamburg, Germany  
-[jannikbeyerstedt.de](http://jannikbeyerstedt.de) | [Github](https://github.com/jbeyerstedt)  
-
-
 ## this sitemap-template has some special features
 
 - the settings are moved to the config.php
@@ -14,9 +9,6 @@ I needed this variation of the classic xmlsitemap of Bastian Allgeier to exclude
 
 Another variation is a html version of the sitemap to be displayed to the website visitor. It´s a simple hierarchical view.
 
-
-#### note:
-This is only tested with kirby 2!
 
 #### installation
 store the files of the templates folder in
