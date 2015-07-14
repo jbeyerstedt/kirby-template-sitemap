@@ -23,6 +23,10 @@ store the files of the templates folder in
 	
 	site/templates/
 
+store the files of the snippets folder in
+	
+	site/snippets/
+
 store the files of the blueprints folder in
 	
 	site/blueprints/
@@ -30,8 +34,8 @@ store the files of the blueprints folder in
 There are two files each! One is for the xml sitemap, one for an html sitemap, which is human readable.
 
 #### html sitemap
-Currently the html sitemap template uses some special snippets I use for my html header and footer. Because of that eveyone should modify this template for their own template structure.  
-But this will be changed soon!!! See upcomign features or feel free to fork and submitt a pull-request!
+The html sitemap can be embedded in your content section by the handy snippet. E.g. create a template named `htmlsitemap` with your normal site structure and replace your normal (text) content with the snippet. The snippet creates two columns with the twitter bootstrap markup, so you have to have bootstrap or you have to write a litte css to put the columns in the right place.  
+There is a corresponding blueprint for a htmlsitemap template, which displays some information in the panel.
 
 
 #### usage/ preparation
@@ -54,9 +58,12 @@ For the html sitemap, you should set some other values:
 #### usage/ including the template
 As for every other kirby template, generate a page (folder) for your uri and let the the content file have the same name as the template.
 
+#### usage/ the snippet
+The snippet is very easy to use:
+```php
+snippet('htmlsitemap');
+```
 
-## upcoming features
-I want to replace my html sitemap template with a snippet, so that eveyone can have it´s own sitemap template with a uniform snippet generating the content.
 
 
 ## contribution
