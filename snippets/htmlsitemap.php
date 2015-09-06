@@ -11,11 +11,12 @@
 // snippet('htmlsitemap');
 // see the readme.md contained in the repository
 
-// version: 1.2.0 (15.07.2015)
+// version: 1.2.1 (05.09.2015)
 // changelog: 
 // v1.1.0: more beautiful html markup && set ignore arrays in config
 // v1.1.1: move content column class to config.php
 // v1.2.0: move htmlsitemap to a snippet
+// v1.2.1: add third recursion level for pages
 // -------------------------------------------
 
 function pageExcluded($p) {
@@ -46,7 +47,19 @@ foreach($pages->visible() as $p) {
     echo '<ul>';
     foreach($p->children()->visible() as $p) {
       if(pageExcluded($p)) continue;
-      echo '<li><a href="'.html($p->url()).'">'.html($p->title()).'</a></li>';
+      
+      if($p->hasChildren()) {
+        echo '<li><a href="'.html($p->url()).'">'.html($p->title()).'</a></li>';
+        echo '<ul>';
+        foreach($p->children()->visible() as $p) {
+          if(pageExcluded($p)) continue;
+          echo '<li><a href="'.html($p->url()).'">'.html($p->title()).'</a></li>';
+        }
+        echo '</ul>';
+      }else {
+        echo '<li><a href="'.html($p->url()).'">'.html($p->title()).'</a></li>';
+      }
+      
     }
     echo '</ul>';
   }else {
