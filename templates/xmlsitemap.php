@@ -1,4 +1,4 @@
-<?php 
+<?php
 // -------------------------------------------
 // kirby template FOR all
 // Title:  xmlsitemap
@@ -7,7 +7,7 @@
 // better sitemap for sites containing onepagers:
 // exclude pages from sitemap by intended Template (content file name)
 // so You can exclude the templates, that are only for blueprints or for selecting snippets.
- 
+
 // copyright: Jannik Beyerstedt | http://jannikbeyerstedt.de | code@jannikbeyerstedt.de
 // license: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
 
@@ -15,7 +15,7 @@
 // see the readme.md contained in the repository
 
 // version: 1.1.0 (14.03.2015)
-// changelog: 
+// changelog:
 // v1.1.0: set ignore arrays in config
 // -------------------------------------------
 
@@ -40,5 +40,5 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
     <lastmod><?php echo $p->modified('c') ?></lastmod>
     <priority><?php echo ($p->isHomePage()) ? 1 : number_format(0.5/$p->depth(), 1) ?></priority>
   </url>
-<?php endforeach ?>  
+<?php endforeach ?>
 </urlset>
