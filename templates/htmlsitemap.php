@@ -1,4 +1,4 @@
-<?php 
+<?php
 // -------------------------------------------
 // kirby template FOR all
 // Title:  sitemap
@@ -9,7 +9,7 @@
 // better sitemap for sites containing onepagers:
 // exclude pages from sitemap by intended Template (content file name)
 // so You can exclude the templates, that are only for blueprints or for selecting snippets.
- 
+
 // copyright: Jannik Beyerstedt | http://jannikbeyerstedt.de | code@jannikbeyerstedt.de
 // license: http://www.gnu.org/licenses/gpl-3.0.txt GPLv3 License
 
@@ -17,7 +17,7 @@
 // see the readme.md contained in the repository
 
 // version: 1.1.0 (21.03.2015)
-// changelog: 
+// changelog:
 // v1.1.0: more beautiful html markup && set ignore arrays in config
 // v1.1.1: move content column class to config.php
 // -------------------------------------------
@@ -25,7 +25,7 @@
 function pageExcluded($p) {
   $ignore         = c::get('smap_ignoreSite');
   $ignoreTemplate = c::get('smap_ignoreTemplate');
-  
+
   if(in_array($p->uri(), $ignore)) {
     return true;
   }else if(in_array($p->intendedTemplate(), $ignoreTemplate) ) {
@@ -45,7 +45,7 @@ snippet('plg/plg-navbar');
     <div <?php echo c::get('smap_column_class_id') ?>>
       <div class="sheet">
     <h2><?php echo $page->title() ?></h2>
-    
+
     <div class="row">
     <div class="col-sm-6">
     <h4><?php echo c::get('smap_heading_visible')?></h4>
@@ -53,7 +53,7 @@ snippet('plg/plg-navbar');
 <?php
 foreach($pages->visible() as $p) {
   if(pageExcluded($p)) continue;
-  
+
   if($p->hasChildren()) {
     echo '<li><h5>'.html($p->title()).'</h5></li>';
     echo '<ul>';
@@ -69,7 +69,7 @@ foreach($pages->visible() as $p) {
 ?>
     </ul>
     </div>
-    
+
     <div class="col-sm-6">
     <h4><?php echo c::get('smap_heading_invisible')?></h4>
     <ul>

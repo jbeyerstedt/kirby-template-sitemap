@@ -1,4 +1,4 @@
-<?php 
+<?php
 // -------------------------------------------
 // kirby snippet GENERAL
 // Title:  htmlsitemap
@@ -12,7 +12,7 @@
 // see the readme.md contained in the repository
 
 // version: 1.2.1 (05.09.2015)
-// changelog: 
+// changelog:
 // v1.1.0: more beautiful html markup && set ignore arrays in config
 // v1.1.1: move content column class to config.php
 // v1.2.0: move htmlsitemap to a snippet
@@ -22,7 +22,7 @@
 function pageExcluded($p) {
   $ignore         = c::get('smap_ignoreSite');
   $ignoreTemplate = c::get('smap_ignoreTemplate');
-  
+
   if(in_array($p->uri(), $ignore)) {
     return true;
   }else if(in_array($p->intendedTemplate(), $ignoreTemplate) ) {
@@ -41,13 +41,13 @@ function pageExcluded($p) {
 <?php
 foreach($pages->visible() as $p) {
   if(pageExcluded($p)) continue;
-  
+
   if($p->hasChildren()) {
     echo '<li><h5>'.html($p->title()).'</h5></li>';
     echo '<ul>';
     foreach($p->children()->visible() as $p) {
       if(pageExcluded($p)) continue;
-      
+
       if($p->hasChildren()) {
         echo '<li><a href="'.html($p->url()).'">'.html($p->title()).'</a></li>';
         echo '<ul>';
@@ -59,7 +59,7 @@ foreach($pages->visible() as $p) {
       }else {
         echo '<li><a href="'.html($p->url()).'">'.html($p->title()).'</a></li>';
       }
-      
+
     }
     echo '</ul>';
   }else {
@@ -69,7 +69,7 @@ foreach($pages->visible() as $p) {
 ?>
     </ul>
   </div>
-    
+
   <div class="col-sm-6">
     <h4><?php echo c::get('smap_heading_invisible')?></h4>
     <ul>
