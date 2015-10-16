@@ -34,6 +34,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
 <?php foreach($pages->index() as $p):
   if($ignore !== null && in_array($p->uri(), $ignore)) continue;
   if($ignoreTemplate !== null && in_array($p->intendedTemplate(), $ignoreTemplate) ) continue;
+  if($p->isInvisible() && $p->isHomePage() === false) continue;
 ?>
   <url>
     <loc><?php echo html($p->url()) ?></loc>
