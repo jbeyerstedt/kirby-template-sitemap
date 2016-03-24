@@ -5,11 +5,22 @@
 title: x- only for html-sitemap
 pages: false
 files: false
+options:
+  preview: true
+  status: false
+  template: false
+  url: false
+  delete: false
 
 fields:
-  info:
+  title:
     label:
-      de:  HINWEIS
+      en:  Title
+      de:  Titel/ Überschrift
+    type:  text
+
+  info:
+    label: NOTICE
     type:  info
     text:  >
       This site generates a html-base sitemap (a human readable one)
@@ -23,8 +34,3 @@ fields:
       <pre>c::set('smap_column_class_id', 'class="..." id="..."');</pre>
 
       For more information see the readme.
-
-  title:
-    label: Title
-      de:  Titel/ Überschrift
-    type:  text
