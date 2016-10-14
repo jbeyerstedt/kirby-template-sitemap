@@ -32,8 +32,9 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <?php foreach($pages->index() as $p):
-  if(in_array($p->uri(), $ignore)) continue;
-  if(in_array($p->intendedTemplate(), $ignoreTemplate) ) continue;
+  if($ignore !== null && in_array($p->uri(), $ignore)) continue;
+  if($ignoreTemplate !== null && in_array($p->intendedTemplate(), $ignoreTemplate) ) continue;
+  if($p->isInvisible() && $p->isHomePage() === false) continue;
 ?>
   <url>
     <loc><?php echo html($p->url()) ?></loc>
