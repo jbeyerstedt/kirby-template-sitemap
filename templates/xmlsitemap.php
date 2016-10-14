@@ -14,13 +14,16 @@
 // usage:
 // see the readme.md contained in the repository
 
-// version: 1.1.0 (14.03.2015)
+// version: 1.2.1 (14.10.2016)
 // changelog:
 // v1.1.0: set ignore arrays in config
+// v1.2.0: exclude invisible pages
+// v1.2.1: new option to switch exclusion of invisible pages at root level
 // -------------------------------------------
 
 $ignore         = c::get('smap_ignoreSite');
 $ignoreTemplate = c::get('smap_ignoreTemplate');
+$ignoreShowInvisibleAtRoot = c::get('smap_showHiddenPagesAtRootLevel', false);
 
 // send the right header
 header('Content-type: text/xml; charset="utf-8"');
@@ -34,7 +37,13 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
 <?php foreach($pages->index() as $p):
   if($ignore !== null && in_array($p->uri(), $ignore)) continue;
   if($ignoreTemplate !== null && in_array($p->intendedTemplate(), $ignoreTemplate) ) continue;
-  if($p->isInvisible() && $p->isHomePage() === false) continue;
+  if($ignoreShowInvisibleAtRoot) {
+    // only ignore invisible pages, which are deeper than root level
+    if($p->isInvisible() && $p->depth() > 1) continue;
+  } else {
+    // ignore all invisible pages
+    if($p->isInvisible() && $p->isHomePage() === false) continue;
+  }
 ?>
   <url>
     <loc><?php echo html($p->url()) ?></loc>

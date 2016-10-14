@@ -32,10 +32,12 @@ function pageExcluded($p) {
   }
 }
 
+$showInvisiblePages = c::get('smap_showHiddenPagesAtRootLevel', false);
+
 ?>
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="<?php echo ($showInvisiblePages) ? 'col-sm-6' : 'col-sm-12' ?>">
     <h4><?php echo c::get('smap_heading_visible')?></h4>
     <ul>
 <?php
@@ -70,6 +72,7 @@ foreach($pages->visible() as $p) {
     </ul>
   </div>
 
+<?php if($showInvisiblePages) : ?>
   <div class="col-sm-6">
     <h4><?php echo c::get('smap_heading_invisible')?></h4>
     <ul>
@@ -81,4 +84,5 @@ foreach($pages->invisible() as $p) {
 ?>
     </ul>
   </div>
+<?php endif; ?>
 </div>

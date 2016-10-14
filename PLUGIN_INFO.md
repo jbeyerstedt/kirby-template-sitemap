@@ -2,9 +2,11 @@ This template for the kirby CMS let’s you have fine grained control over the p
 
 The main features are:
 
-- you can ignore special sites by it´s uri
+- you can ignore special sites by it’s uri
 - and you can ignore sites by the template it uses !  
 in detail it is the "intended template", aka filename of the content file!
+
+Invisible pages will not be shown in the sitemap, but there is an option to show invisible pages at the top level anyway (e.g. to show imprint and contact pages in the sitemap as well).
 
 There is also a html version of the sitemap available, but this template uses some special snippets I use for my header, navigation and footer, so you would have to adjust this to your site’s structure.
 
@@ -26,7 +28,7 @@ store the files of the blueprints folder in
 There are two files each! One is for the xml sitemap, one for an html sitemap, which is human readable.
 
 #### html Sitemap
-The html sitemap can be embedded in your content section by the handy snippet. E.g. create a template named `htmlsitemap` with your normal site structure and replace your normal (text) content with the snippet. The snippet creates two columns with the twitter bootstrap markup, so you have to have bootstrap or you have to write a litte css to put the columns in the right place.  
+The html sitemap can be embedded in your content section by the handy snippet. E.g. create a template named `htmlsitemap` with your normal site structure and replace your normal (text) content with the snippet. The snippet creates two columns with the twitter bootstrap markup, so you have to have bootstrap or you have to write a little css to put the columns in the right place.  
 There is a corresponding blueprint for a htmlsitemap template, which displays some information in the panel.
 
 
@@ -35,9 +37,11 @@ set some constants in your config.php
 
     c::set('smap_ignoreSite',     array('sitemap', 'htmlsitemap'));
     c::set('smap_ignoreTemplate', array('foo'));
+    c::set('smap_showHiddenPagesAtRootLevel', false);
 
 `smap_ignoreSite` contains all sites you want to be excluded from the sitemap.  
-`smap_ignoreTemplate` contains all templates you want to be ecxluded from the sitemap.  
+`smap_ignoreTemplate` contains all templates you want to be excluded from the sitemap.  
+`smap_showHiddenPagesAtRootLevel` option to show hidden pages at top level
 
 For the html sitemap, you should set some other values:
 
