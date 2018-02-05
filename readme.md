@@ -1,16 +1,17 @@
-# kirby CMS - sitemap templates
+# Kirby Enhanced Sitemap Templates
 by Jannik Beyerstedt from Hamburg, Germany  
 [jannikbeyerstedt.de](http://jannikbeyerstedt.de) | [Github](https://github.com/jbeyerstedt)  
-**license:** GNU GPL v3
+**license:** GNU GPL v3  
+**version:** v1.2.1
 
 ## Introduction
-**this sitemap-template has some special features**
+**Sitemap-Templates with option to exclude pages by template e.g. for one-pagers**
 
 This template for the kirby CMS let’s you have fine grained control over the pages included in the sitemap. Especially I needed features to exclude onepager sections.
 
 The main features are:
 
-- you can ignore special sites by it’s uri
+- you can ignore special sites by it’s URI
 - and you can ignore sites by the template it uses !  
 in detail it is the "intended template", aka filename of the content file!
 
@@ -35,7 +36,7 @@ store the files of the blueprints folder in
 
 There are two files each! One is for the xml sitemap, one for an html sitemap, which is human readable.
 
-#### html Sitemap
+#### Html Sitemap
 The html sitemap can be embedded in your content section by the handy snippet. E.g. create a template named `htmlsitemap` with your normal site structure and replace your normal (text) content with the snippet. The snippet creates two columns with the twitter bootstrap markup, so you have to have bootstrap or you have to write a little css to put the columns in the right place.  
 There is a corresponding blueprint for a htmlsitemap template, which displays some information in the panel.
 
@@ -60,7 +61,7 @@ For the html sitemap, you should set some other values:
 `smap_heading_invisible` set a heading for all invisible pages.
 
 #### Including the Template
-As for every other kirby template, generate a page (folder) for your uri and let the the content file have the same name as the template.
+As for every other kirby template, generate a page (folder) for your URI and let the the content file have the same name as the template.
 
 #### The Snippet
 The snippet is very easy to use:
