@@ -32,7 +32,7 @@ store the files of the snippets folder in
 
 store the files of the blueprints folder in
 
-	site/blueprints/
+	site/blueprints/pages
 
 There are two files each! One is for the xml sitemap, one for an html sitemap, which is human readable.
 

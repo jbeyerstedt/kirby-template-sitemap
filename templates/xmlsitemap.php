@@ -39,10 +39,10 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
   if($ignoreTemplate !== null && in_array($p->intendedTemplate(), $ignoreTemplate) ) continue;
   if($ignoreShowInvisibleAtRoot) {
     // only ignore invisible pages, which are deeper than root level
-    if($p->isInvisible() && $p->depth() > 1) continue;
+    if($p->isUnlisted() && $p->depth() > 1) continue;
   } else {
     // ignore all invisible pages
-    if($p->isInvisible() && $p->isHomePage() === false) continue;
+    if($p->isUnlisted() && $p->isHomePage() === false) continue;
   }
 ?>
   <url>

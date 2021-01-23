@@ -1,0 +1,40 @@
+title: XML Sitemap
+
+options:
+  changeStatus: false
+  changeTempate: false
+  changeSlug: false
+  delete: false
+  changeTitle: false
+
+columns:
+  main:
+    width: 2/3
+    sections:
+
+      content:
+        type: fields
+        fields:
+          info:
+            label: NOTICE
+            type:  info
+            text:  >
+              This site generates a html-base sitemap (a human readable one)
+              <br>
+              You should probably set some of the following options in the config.php
+              <br>
+              <pre>c::set('smap_ignoreSite', array(...));</pre>
+              <pre>c::set('smap_ignoreTemplate', array(...));</pre>
+              <pre>c::set('smap_heading_visible', '...');</pre>
+              <pre>c::set('smap_heading_invisible', '...');</pre>
+              <pre>c::set('smap_column_class_id', 'class="..." id="..."');</pre>
+
+              For more information see the readme.
+
+  sidebar:
+    width: 1/3
+    sections:
+
+      pages: false
+
+      files: false

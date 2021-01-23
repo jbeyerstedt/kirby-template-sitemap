@@ -41,19 +41,19 @@ $showInvisiblePages = c::get('smap_showHiddenPagesAtRootLevel', false);
     <h4><?php echo c::get('smap_heading_visible')?></h4>
     <ul>
 <?php
-foreach($pages->visible() as $p) {
+foreach($pages->listed() as $p) {
   if(pageExcluded($p)) continue;
 
   if($p->hasChildren()) {
     echo '<li><h5>'.html($p->title()).'</h5></li>';
     echo '<ul>';
-    foreach($p->children()->visible() as $p) {
+    foreach($p->children()->listed() as $p) {
       if(pageExcluded($p)) continue;
 
       if($p->hasChildren()) {
         echo '<li><a href="'.html($p->url()).'">'.html($p->title()).'</a></li>';
         echo '<ul>';
-        foreach($p->children()->visible() as $p) {
+        foreach($p->children()->listed() as $p) {
           if(pageExcluded($p)) continue;
           echo '<li><a href="'.html($p->url()).'">'.html($p->title()).'</a></li>';
         }
@@ -77,7 +77,7 @@ foreach($pages->visible() as $p) {
     <h4><?php echo c::get('smap_heading_invisible')?></h4>
     <ul>
 <?php
-foreach($pages->invisible() as $p) {
+foreach($pages->unlisted() as $p) {
   if(pageExcluded($p)) continue;
   echo '<li><a href="'.html($p->url()).'">'.html($p->title()).'</a></li>';
 }
